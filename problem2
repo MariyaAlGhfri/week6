@@ -1,0 +1,13 @@
+
+#length of list
+def lengthlist(listnum):
+    count = 0
+    for elements in listnum:
+        if type(elements) == list:  
+            count += lengthlist(elements)
+        else:
+            count += 1    
+    return count
+
+listnum = [1,2,3,[4,5,[6,7]]]
+print('length: ', lengthlist(listnum))
